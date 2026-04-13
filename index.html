@@ -3,120 +3,265 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MediSpend Inspired Landing</title>
+    <title>MediSpend Clone | Compliance Software for Life Sciences</title>
+    <meta
+      name="description"
+      content="Enterprise-grade clone experience of a life sciences compliance platform website with full front-end interactions."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="top">
       <div class="container nav-wrap">
-        <div class="brand">medispend</div>
-        <nav>
+        <a class="brand" href="#top" aria-label="MediSpend clone home">medispend</a>
+
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="main-nav">
+          <div class="nav-item has-dropdown">
+            <button class="nav-btn" aria-expanded="false">Platform</button>
+            <div class="dropdown">
+              <a href="#platform">Overview</a>
+              <a href="#capabilities">Capabilities</a>
+              <a href="#integrations">Integrations</a>
+            </div>
+          </div>
           <a href="#solutions">Solutions</a>
-          <a href="#about">About</a>
           <a href="#resources">Resources</a>
+          <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
-        <button class="btn btn-outline">Schedule a Consultation</button>
+
+        <div class="header-actions">
+          <button class="btn btn-outline" data-open-modal="login-modal">Client Login</button>
+          <button class="btn" data-open-modal="demo-modal">Book a Demo</button>
+        </div>
       </div>
     </header>
 
-    <main>
-      <section class="hero">
+    <main id="main">
+      <section class="hero section">
         <div class="container hero-grid">
           <div>
-            <p class="eyebrow">Empowering Life Sciences Companies</p>
-            <h1>Grow Your Business Compliantly</h1>
+            <p class="eyebrow">Compliance & Transparency Platform</p>
+            <h1>Modernize Life Sciences Compliance With One Unified Platform</h1>
             <p class="lead">
-              Cloud software and managed services that help pharmaceutical, biotech, and medtech teams reduce risk,
-              improve engagements, and scale with confidence.
+              Replicated enterprise-style experience with product modules for spend transparency, grants,
+              engagements, due diligence, and monitoring across global teams.
             </p>
             <div class="hero-actions">
-              <button class="btn">Get Started</button>
-              <button class="btn btn-muted">Explore Solutions</button>
+              <button class="btn" data-open-modal="demo-modal">Request Consultation</button>
+              <a class="btn btn-light" href="#platform">Explore Platform</a>
+            </div>
+            <div class="hero-meta">
+              <span>Trusted by commercial, legal, and compliance teams</span>
+              <span>Audit-ready controls</span>
+              <span>Global reporting alignment</span>
             </div>
           </div>
-          <div class="hero-card">
-            <h3>Trusted by 400+ organizations</h3>
-            <ul>
-              <li>Regulatory Science</li>
-              <li>Commercial Compliance</li>
-              <li>Medical Affairs</li>
-              <li>Revenue Management</li>
-            </ul>
-          </div>
+          <aside class="hero-panel">
+            <h2>At a Glance</h2>
+            <div class="metric">
+              <span class="number" data-count="400">0</span>
+              <span>organizations supported</span>
+            </div>
+            <div class="metric">
+              <span class="number" data-count="100">0</span>
+              <span>country reporting frameworks</span>
+            </div>
+            <div class="metric">
+              <span class="number" data-count="99">0</span>
+              <span>% SLA response confidence</span>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section id="solutions" class="section">
+      <section id="platform" class="section section-muted">
         <div class="container">
-          <h2>Our Solutions</h2>
-          <p class="section-copy">Designed for life sciences teams that need speed, oversight, and global compliance.</p>
-          <div class="cards">
-            <article>
-              <h3>Regulatory Science</h3>
-              <p>Submit and disclose clinical data with confidence using secure workflows and traceability.</p>
+          <h2>Platform Suite</h2>
+          <p class="section-copy">Switch between modules to preview core platform workflows.</p>
+          <div class="tabs" role="tablist" aria-label="Platform modules">
+            <button class="tab active" role="tab" aria-selected="true" data-tab="transparency">Transparency</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="grants">Grants</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="engagements">Engagements</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="risk">Third-Party Risk</button>
+          </div>
+
+          <div class="tab-panels">
+            <article class="tab-panel active" data-panel="transparency">
+              <h3>Transparency Reporting</h3>
+              <p>Aggregate, validate, and disclose transfer-of-value data with configurable business rules and submission exports.</p>
             </article>
-            <article>
-              <h3>Commercial Compliance</h3>
-              <p>Manage spend transparency, stakeholder engagements, and third-party risk across markets.</p>
+            <article class="tab-panel" data-panel="grants">
+              <h3>Grants & Sponsorships</h3>
+              <p>Standardize intake, committee review, milestone checks, and payment traceability for compliant program execution.</p>
             </article>
-            <article>
-              <h3>Medical Affairs</h3>
-              <p>Support MSL teams with closed-loop scientific exchange, grants, and event management.</p>
+            <article class="tab-panel" data-panel="engagements">
+              <h3>HCP Engagements</h3>
+              <p>Control speaker programs and advisory activities with eligibility checks, FMV alignment, and post-event reconciliation.</p>
+            </article>
+            <article class="tab-panel" data-panel="risk">
+              <h3>Due Diligence</h3>
+              <p>Automate third-party onboarding with risk scoring, sanctions checks, document workflows, and periodic reassessment.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="about" class="section alt">
-        <div class="container two-col">
+      <section id="capabilities" class="section">
+        <div class="container">
+          <h2>Capabilities</h2>
+          <div class="cards cards-4">
+            <article class="card"><h3>Workflow Automation</h3><p>Approval paths, reminders, and exception handling.</p></article>
+            <article class="card"><h3>Policy Controls</h3><p>Country and program-level configuration with audit logs.</p></article>
+            <article class="card"><h3>Unified Reporting</h3><p>Dashboards and exports for operations and leadership.</p></article>
+            <article class="card"><h3>Case Management</h3><p>Issue tracking, ownership routing, and corrective actions.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="solutions" class="section section-dark">
+        <div class="container split">
           <div>
-            <h2>Scale Confidently</h2>
-            <p>
-              We help organizations navigate complex healthcare regulations with enterprise-ready software and
-              practical compliance expertise.
-            </p>
+            <h2>Solutions by Team</h2>
+            <p>Role-specific workflows for compliance, legal, medical affairs, finance, and commercial operations.</p>
           </div>
           <ul class="checklist">
-            <li>Life sciences focused</li>
-            <li>Enterprise scalability</li>
-            <li>Advanced analytics</li>
-            <li>Trusted partnership</li>
+            <li>Commercial compliance monitoring</li>
+            <li>Medical affairs governance</li>
+            <li>Field activity transparency</li>
+            <li>Event and travel spend oversight</li>
+            <li>Vendor and grant risk management</li>
           </ul>
         </div>
       </section>
 
       <section id="resources" class="section">
         <div class="container">
-          <h2>Latest Insight</h2>
-          <article class="resource-card">
-            <h3>State Drug Price Transparency Reporting: Enforcement Trends</h3>
-            <p>
-              Understand how SPTR has shifted from occasional filing to an ongoing compliance responsibility for
-              manufacturers.
-            </p>
-            <a href="#">Read More</a>
-          </article>
+          <h2>Resources</h2>
+          <div class="resource-controls">
+            <input type="search" id="resource-search" placeholder="Search resources..." aria-label="Search resources" />
+            <select id="resource-filter" aria-label="Filter by type">
+              <option value="all">All Types</option>
+              <option value="article">Article</option>
+              <option value="webinar">Webinar</option>
+              <option value="guide">Guide</option>
+            </select>
+          </div>
+          <div class="cards" id="resource-list">
+            <article class="card resource" data-type="article" data-title="state transparency enforcement checklist">
+              <p class="tag">Article</p>
+              <h3>State Transparency Enforcement Checklist</h3>
+            </article>
+            <article class="card resource" data-type="webinar" data-title="building a global spend program">
+              <p class="tag">Webinar</p>
+              <h3>Building a Global Spend Program</h3>
+            </article>
+            <article class="card resource" data-type="guide" data-title="hcp engagement controls playbook">
+              <p class="tag">Guide</p>
+              <h3>HCP Engagement Controls Playbook</h3>
+            </article>
+            <article class="card resource" data-type="article" data-title="third party due diligence essentials">
+              <p class="tag">Article</p>
+              <h3>Third-Party Due Diligence Essentials</h3>
+            </article>
+          </div>
+          <p id="resource-empty" hidden>No matching resources found.</p>
         </div>
       </section>
 
-      <section id="contact" class="section contact">
+      <section id="integrations" class="section section-muted">
         <div class="container">
-          <h2>Ready to talk?</h2>
-          <p>Tell us a bit about your team and we’ll connect you with a specialist.</p>
-          <form class="contact-form">
-            <input type="text" placeholder="First name" />
-            <input type="text" placeholder="Last name" />
-            <input type="email" placeholder="Work email" />
-            <input type="text" placeholder="Company" />
-            <textarea rows="4" placeholder="How can we help?"></textarea>
-            <button class="btn" type="button">Submit</button>
+          <h2>Client Stories</h2>
+          <div class="testimonial">
+            <blockquote id="quote-text"></blockquote>
+            <p id="quote-author"></p>
+            <div class="hero-actions">
+              <button class="btn btn-light" id="prev-quote">Previous</button>
+              <button class="btn btn-light" id="next-quote">Next</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">How long does implementation take?</button>
+              <div class="faq-answer"><p>Most teams launch in phased rollouts between 8 and 16 weeks based on module scope.</p></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">Do you support global regulations?</button>
+              <div class="faq-answer"><p>Yes. Rule libraries and country templates can be configured for multiple jurisdictions.</p></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">Can we integrate with ERP/CRM tools?</button>
+              <div class="faq-answer"><p>Open APIs and scheduled import/export pipelines are available for core enterprise systems.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section-muted">
+        <div class="container split split-contact">
+          <div>
+            <h2>Request a Live Demo</h2>
+            <p>Send your details and we will follow up with a tailored walkthrough.</p>
+          </div>
+          <form class="contact-form" id="contact-form" novalidate>
+            <input name="firstName" type="text" placeholder="First name" required />
+            <input name="lastName" type="text" placeholder="Last name" required />
+            <input name="company" type="text" placeholder="Company" required />
+            <input name="email" type="email" placeholder="Business email" required />
+            <textarea name="message" rows="4" placeholder="What would you like to improve?" required></textarea>
+            <button class="btn" type="submit">Submit</button>
+            <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
           </form>
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>© <span id="year"></span> MediSpend Clone Experience</p>
+        <a href="#top" class="back-to-top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <div class="cookie-banner" id="cookie-banner" hidden>
+      <p>This site uses cookies to improve your experience.</p>
+      <button class="btn btn-light" id="accept-cookies">Accept</button>
+    </div>
+
+    <dialog id="demo-modal" class="modal">
+      <form method="dialog" class="modal-body">
+        <h3>Book a Demo</h3>
+        <p>Thanks for your interest. Demo scheduling workflow is ready in this clone.</p>
+        <button class="btn">Close</button>
+      </form>
+    </dialog>
+
+    <dialog id="login-modal" class="modal">
+      <form method="dialog" class="modal-body">
+        <h3>Client Login</h3>
+        <p>Authentication UI is represented for front-end parity.</p>
+        <button class="btn">Close</button>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
   </body>
 </html>
